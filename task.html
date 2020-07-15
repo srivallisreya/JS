@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login and Registeration Form</title>
+        <link rel="stylesheet" href="style.css">;
+        <script>
+            function onValidate(){
+            var plog=document.forms["logform"]["pswd"].value;
+            var pattern_user=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            var userlog=document.forms["logform"]["userid"].value;
+            
+            if(userlog==""||userlog==null){
+                alert("Please Provide User Id!");
+                return false;
+            }
+            
+            if(plog==""||plog==null){
+                alert("Password Incorrect!");
+                return false;
+            }
+            
+            
+            
+
+            }
+            function validate(){
+                
+            var fn=document.forms["regform"]["fname"].value;
+            var ln=document.forms["regform"]["lname"].value;
+            var db=document.forms["regform"]["dob"].value;
+            var preg=document.forms["regform"]["password"].value;
+            var pattern =/^([0-9]{2})-([0-9]{2})-([0-9]{4})$/;
+            var pattern_email=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            var emailreg=document.forms["regform"]["email"].value;
+
+            if(fn==""||fn==null){
+                alert("Please Provide Your First Name!");
+                return false;
+            }
+            if(ln==""||ln==null){
+                alert("Please Provide Your Last Name!");
+                return false;
+            }
+            if(db==""||db==null||!pattern.test(db)){
+                alert("Please Provide Your Date Of Birth!");
+                return false;
+            }
+            if(emailreg==""||emailreg==null){
+                alert("Please Provide Email Id!");
+                return false;
+            }
+            if(!pattern_email.test(emailreg)){
+                alert("Invalid Email Id!");
+                return false;
+            }
+            if(preg=="" ||preg==null){
+                alert("Please Provide Password!");
+                return false;
+            }
+            if(regform.check.checked==false){
+                alert("please check the box!");
+                return false;
+            }
+            
+            
+
+            }
+        
+        
+        </script>
+    </head>
+    <body>
+        <div class="hero">
+            <div class="form-box">
+                <div class="button-box">
+                    <div id="btn"></div>
+                    <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+                    <button type="button" class="toggle-btn"onclick="register()">Register</button>
+                </div>
+                <form id="login"  class="input-group"  name="logform" onsubmit="onValidate()">
+              
+                  <input type="text" class="input-field"name="userid" placeholder="User Id">
+                  <input type="password" class="input-field" name="pswd" placeholder="Enter Password">
+                  <button type="submit" class="submit-btn">Log in</button>
+                  <p class="or">OR</p>
+                  <button type="submit" class="butt" >f</button>
+                  <button type="submit" class="but" >g</button>
+                  <button type="submit" class="bt" > &lt Epam Login &gt </Epam></button>
+                </form> 
+
+                
+                
+                <form id="register"  class="input-group"  name="regform" onsubmit="validate()" >
+                  <input type="text" class="input-field" name="fname" placeholder="First Name ">
+                  <input type="text" class="input-field" name="lname" placeholder="Last Name " >
+                  <input type="text" class="input-field" name="dob" placeholder="Date-Of-Birth(DD-MM-YYYY)" >
+                  <input type="email" class="input-field" name="email" placeholder="Email Id">                 
+                  <input type="password" class="input-field" name="password" placeholder="Enter Password">
+                  <input type="checkbox" class="check-box"name="check"><span>I agree to the terms and conditions</span>
+                  <button type="submit" class="submit-btn">Register</button>
+                
+                </form> 
+            </div>
+        </div>
+        <script>
+            var x=document.getElementById("login");
+            var y=document.getElementById("register");
+            var z=document.getElementById("btn");
+            function register(){
+                x.style.left="-400px";
+                y.style.left="50px";
+                z.style.left="110px";
+            }
+            function login(){
+                x.style.left="50px";
+                y.style.left="450px";
+                z.style.left="0px";
+            }
+            
+        </script>
+    </body>
+</html>
